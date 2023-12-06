@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabela!</title>
+  <style>
+  body{
+    font-family: Arial, helvetica, sans-serif;
+  }
+  table{
+    width: 400px;
+    height: 200px;
+    border-collapse: collapse;
+  }
+  td{
+    border: 1px solid black;
+    padding-left: 5px;
+  }
+  th{
+    background-color: gray;
+    border: 1px solid black;
+    font-width: center;
+    vertical-height: middle;
+  }
+  .cgrupo{
+    background-color: yellow;
+  }
+  col.cnome{
+    border: 2px solid red;
+  }
+  .verde{
+    background-color: lightgreen;
+  }
+  div#container{
+    overflow-x: auto;
+  }
+  </style>
+</head>
+<body>
+  <h1>
+    Trabalhando com colunas
+  </h1>
+  <div id="container">
+  <table>
+    <colgroup>
+      <col class="cnome">
+      <col class="verde">
+      <col class="cgrupo" span="2">
+    </colgroup>
+    
+    <figcaption> 
+    Colunas</figcaption>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Profissão</th>
+    </tr>
+    <tr>
+      <td>Ana</td>
+      <td>F</td>
+      <td>20</td>
+      <td>Engenheira</td>
+    </tr>
+    <tr>
+      <td>Gu</td>
+      <td>M</td>
+      <td>25</td>
+      <td>design</td>
+     
+    </tr>
+    <tr>
+      <td>Sca</td>
+      <td>F</td>
+      <td>20</td>
+      <td>Engen</td>
+    </tr>
+    <tr>
+      <td>Jose</td>
+      <td>M</td>
+      <td>25</td>
+      <td>Inss</td>
+    </tr>
+  </table>
+  </div>
+</body>
+</html>

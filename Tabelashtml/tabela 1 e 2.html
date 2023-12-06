@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela 1</title>
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+table{
+  width: 200px;
+  height: 100px;
+  border-collapse: collapse;
+}
+  
+td{
+  border: 1px solid black;
+  paddig: 10px;
+  text-align: center;
+  vertical-align: center;
+}
+ .tab2{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+   border-collapse: collapse;
+  }
+table.tb3{
+  width: 400px;
+  height: 400px;
+  border-collapse: collapse;
+}
+thead{
+  border: 1px solid black;
+  font-width: center;
+}
+th{
+  border: 1px solid black;
+  text-align: center;
+}
+tr#cab1{
+  background-color:gray;
+  color:white;
+  text-align: left;
+  vertical-align:left;
+}
+tr.cab2{
+  background-color:gray;
+  color: white;
+ 
+}
+tr#med{
+  background-color: gray;
+  color:white;
+  font-weight-bold;
+  text-align: left;
+  vertical-align: left;
+}
+td#ex{
+  text-align: left;
+  font-weight: bold;
+}
+td#cab{
+  font-weight: bold;
+}
+tr#mh{
+  background-color: gray;
+  color: white;
+
+}
+</style>
+</head>
+<body>
+  <h1>
+    Tabela 1
+  </h1>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td rowspan="2">3</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td colspan="3">8</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td rowspan="2">10</td>
+      <td colspan="2">11</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+    </tr>
+  </table>
+  <h1> Tabela 2</h1>
+  <table class="tab2">
+    <tr>
+      <td colspan="4">A</td>
+      <td rowspan="4">B</td>
+    </tr>
+    <tr>
+      <td rowspan="4">C</td>
+      <td>D</td>
+      <td>E</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>H</td>
+      <Td>I</Td>
+    </tr>
+    <tr>
+      <td>J</td>
+      <td>L</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <td colspan="4">N</td>
+    </tr>
+  </table>
+  <h1> Tabela 3</h1>
+  <table class="tb3">
+    <thead>
+    <tr id="cab1">
+      <th id="cab" rowspan="2" >Área</th>
+      <th id="cab"rowspan="2" colspan="2">Disciplinas</th>
+      <th id="cab"colspan="2">Notas</th>
+      <th id="cab"rowspan="2">Média</th>
+    
+    <tr class="cab2">
+      <th id="cab">Nota1</th>
+      <th id="cab">Nota 2</th>
+    </tr>
+      </thead>
+      <tbody>
+    <tr class="corpo">
+      <td rowspan="4"><strong>Exatas</strong></td>
+      <td colspan="2">Matematica</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td colspan="2">Fisica</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td colspan="2">Quimica</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td colspan="2">Biologia</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr id="med">
+      <td id="ex" colspan="5">Media de exatas</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong> Humanas</strong></td>
+      <td colspan="2">Historia</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td colspan="2">Geografia</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr id="mh">
+      <td id="ex"colspan="5">Media de humanas</td>
+      <td>0.0</td>
+    </tr>
+     </tbody>
+  </table>
+</body>
+</html>
