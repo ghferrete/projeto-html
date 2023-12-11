@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*Tela no geral media="all"*/
+
+*{
+		margin: 0px;
+		padding: 0px;
+		font-family: Arial, Helvetica, sans-sarif;
+}
+html, body{
+		width: 100vw;
+		height: 100vh;
+		 background-color: #233eff;
+		background-size: contain;
+		background-repeat: no-repeat;
+		
+}
+h1{
+		color: white;
+		text-shadow: 3px 3px 3px rgb(0, 0, 0);
+		padding: 10px;
+}

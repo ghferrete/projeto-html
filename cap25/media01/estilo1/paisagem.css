@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/*Tela paisagem- media="screen and(orientation: landscape)"> */
+body{
+		background-image: url(/storage/emulated/0/projeto-html/cap25/imagens/cev-landscape.jpg);
+		background-position: left bottom;
+}
+

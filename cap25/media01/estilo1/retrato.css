@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/*Tela retrato- media="screen and(orientation: potrait)"*/
+
+body{
+		background-image: url(/storage/emulated/0/projeto-html/cap25/imagens/cev-portrait.jpg);
+		background-position: center bottom;
+}

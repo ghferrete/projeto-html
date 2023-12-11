@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media 01</title>
+  <link rel="stylesheet" href="stilo.css">
+  <style>
+  <!-- Estilo geral-->
+  * {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body, html{
+    width: 100vw;
+    height: 100vh;
+    background-color: #233eff;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  h1{
+    color: wight;
+    text-shadow: 2px 2px 2px blue;
+    padding: 10px;
+  }
+  <!-- delaraçoes retrato-->
+  @media screen and (orientation: portrait) {
+   body{ 
+    background-image: url(imagens/cev-portrait.jpg);
+    background-position: center bottom;
+   }
+  }
+  <!--orientaçâo paisagem-->
+  @media screen and (orientation: landscape) {
+    body{
+    background-image: url(imagens/cev-landscape.jpg);
+    background-position: left bottom;
+    }
+  }
+  </style>
+</head>
+<body>
+  <h1>
+    Mude a orientaçao de zeu dispositivo
+  </h1>
+</body>
+</html>
