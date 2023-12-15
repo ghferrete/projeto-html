@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 
-<html land="pt-br">
+<html lang="pt-br">
 <head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Login</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 		<link rel="stylesheet" href="estilos/loginstyle.css">
+		<link rel="stylesheet" href="estilos/mideaestilos.css">
 </head>
 <body>
 		<main>
@@ -15,10 +18,28 @@
 						<div id="formulario">
 								<h1>Login</h1>
 								<p> Seja bem vindo (a) novamente, faça login para acessar sua conta e poder fazer alteracoes no seu ambiente.</p>
-								<form action="login.php" method="post">
+								<form action="https://api.sheetmonkey.io/form/czdW8KLHzqV21L3bUkJQWW" method="post">
+										<div class="campo">
+												<span class="material-symbols-outlined">
+person
+</span>
+										<input type="text"name="login" id="ilogin" placeholder="Seu Email" autocomplete="email" required maxlength="30">
+												<label for="ilogin">Nome:</label>
+										</div>
+										<div class="campo">
+												<span class="material-symbols-outlined">
+vpn_key
+</span>
+												<input type="password" name="senha" id="isenha" placeholder="Sua senha" autocomplete="current-password" required minlength="8" maxlength="20">
+												<label for="isenha">Senha:</label>
+										</div>
+										<input type="submit" value="Entrar">
+										<a href="esqueci.html" target="_blank">Esqueci a senha<span class="material-symbols-outlined">
+Mail
+</span></a>
 										
 								</form>
-						</div>
+				</div>
 				</section>
 		</main>
 </body>
