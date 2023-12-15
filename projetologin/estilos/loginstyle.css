@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* Verde:#49a09d
+lilas: #5f2c82
+*/
+*{
+		font-family: -apple-system, BlinkMacSystemFont,'segoi UI',Roboto,oxygem,Ubuntu,Cantarell,'open-sans', helvetica neue, sans-serif;
+		padding: 0px;
+		margin: 0px;
+		box-sizing: border-box;
+}
+body, html{
+		background-color: #5f2c82;
+		height: 100vh;
+		width: 100vw;
+}
+main{
+		position: relative;
+		height: 100vh;
+		width: 100vw;
+}
+section#login{
+		transition: width 0.3, heigth 0.3;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		overflow: hidden;
+		background-color: white;
+		width: 250px;
+		height: 550px;
+		border-radius: 20px;
+		box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.450);
+		transition-timing-function: easy;;
+}
+section#login > div#imagem{
+		display: block;
+		background: #5f2c82 url(fundo.jpg) no-repeat;
+		height: 200px;
+		background-size: cover;
+		background-position: left bottom;
+}
+section#login > div#formulario{
+		display: block;
+		padding: 10px;
+		
+}
+div#formulario > h1{
+}
