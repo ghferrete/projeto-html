@@ -19,7 +19,7 @@ main{
 		width: 100vw;
 }
 section#login{
-		transition: width 0.3, heigth 0.3;
+		transition: width 0.5, heigth 0.5;
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -27,10 +27,10 @@ section#login{
 		overflow: hidden;
 		background-color: white;
 		width: 250px;
-		height: 550px;
+		height: 600px;
 		border-radius: 20px;
 		box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.450);
-		transition-timing-function: easy;;
+		transition-timing-function: easy;
 }
 section#login > div#imagem{
 		display: block;
@@ -39,10 +39,80 @@ section#login > div#imagem{
 		background-size: cover;
 		background-position: left bottom;
 }
+ h1{
+		text-align: center; 
+}
 section#login > div#formulario{
 		display: block;
 		padding: 10px;
 		
 }
+div.campo > i{
+		
+		color: white;
+		font-size: 2em;
+		width: 40.9px;
+		padding: 5px;
+		
+}
+div.campo > input{
+		background-color: #94cfcd;
+		fon-size: 2em;
+		width: calc(100% - 20%);
+		transform: translatey(-38%);
+		height: 100%;
+		border: 0px;
+		border-radius: 8px;
+		padding: 4px;
+}
+div.campo > input:focus-within{
+		background-color: white;
+}
+form > div.campo{
+		background-color: #5f2c82;
+		border: 2px solid #5f2c82;
+		width: 100%;
+		display: block;
+		height: 40px;
+		border-radius: 8px;
+		margin: 5px 0px;
+}
+div.campo > label{
+		display: none;
+}
 div#formulario > h1{
+}
+form > input[type=submit] {
+		display: block;
+		font-size: 1em;
+		width: 100%;
+		height: 40px;
+		background-color: #49a09d;
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+}
+form > input[type=submit]:hover{
+		background-color: #2d6462;
+}
+form > a.botao{
+		display: block;
+		text-align: center;
+		font-size: 1em;
+		width: 100%;
+		height: 40px;
+		background-color: white;
+		border: 1px solid #2d6462;
+		padding-top: 5px;
+		margin-top: 5px;
+		border-radius: 7px;
+		text-decoration: none;
+		color: #2d6462;
+}
+form > a.botao: hover{
+		background-color: #6cd3cf;
+}
+form > a > span{
+		font-size: 0.8em;
 }
