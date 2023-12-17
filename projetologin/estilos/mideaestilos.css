@@ -10,7 +10,7 @@ outtos acima de 1200*/
 		}
 		section#login{
 				width: 80vw;
-				height: 260px;
+				height: 330px;
 		}
 		section#login > div#imagem{
 				float: left;
@@ -31,7 +31,7 @@ outtos acima de 1200*/
 		}
 		section#login{
 				width: 950px;
-				height: 290px;
+				height: 300px;
 		}
 		section#login > div#imagem{
 				float: right;
