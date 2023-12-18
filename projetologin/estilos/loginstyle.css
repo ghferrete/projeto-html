@@ -58,8 +58,8 @@ div.campo > i{
 div.campo > input{
 		background-color: #94cfcd;
 		fon-size: 2em;
-		width: calc(100% - 20%);
-		transform: translatey(-38%);
+		width: calc(100% - 22%);
+		transform: translatey(-43%);
 		height: 100%;
 		border: 0px;
 		border-radius: 8px;
@@ -104,7 +104,7 @@ form > a.botao{
 		height: 40px;
 		background-color: white;
 		border: 1px solid #2d6462;
-		padding-top: 5px;
+		padding-top: 0px;
 		margin-top: 5px;
 		border-radius: 7px;
 		text-decoration: none;
