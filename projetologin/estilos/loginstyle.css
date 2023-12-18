@@ -110,7 +110,7 @@ form > a.botao{
 		text-decoration: none;
 		color: #2d6462;
 }
-form > a.botao: hover{
+form > a: hover{
 		background-color: #6cd3cf;
 }
 form > a > span{
