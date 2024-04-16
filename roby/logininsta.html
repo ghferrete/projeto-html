@@ -11,13 +11,39 @@
 		<div class="login">
 				<form>
 						<h1>LOG IN</h1>
-						<label>Username</label>
-						<input type="text">
-						<label>Password</label>
-						<input type="password">
+						<label for="usuario">Username</label>
+						<input type="text"id="usuario">
+						<label for="senha">Password</label>
+						<input type="password" id="senha">
 						<button>Submit</button>
 						
 				</form>
 		</div>
+
+<script>
+	const usuarios = [
+	{ 	
+		login: 'gustavo',
+		pass: 'gustavo'
+	},
+
+	{	
+		login: 'admin',
+		pass: 'admin'
+	},
+
+	{
+		login: 'henrique',
+		pass: 'henrique'
+	}
+]
+	function (){
+	let usuario = document.getElementById('usuario').value
+	let senha = document.getElementById('senha').value
+
+
+</script>
+
+
 </body>
 </html>
