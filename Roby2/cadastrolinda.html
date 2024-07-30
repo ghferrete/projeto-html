@@ -12,29 +12,32 @@
 		<main class="container">
 				<div class="card">
 						<h1>Cadastrar</h1>
+						<div id ="sucesso"></div>
+						<div id ="erro"></div>
 						<div class="label-float">
 								<input type="text" id="nome"placeholder=""required>
-								<label for="nome">Nome</label>
+								<label id="labelnome"for="nome">Nome</label>
 						</div>
 						<div class="label-float">
 								<input type="text" id="usuario"placeholder="" required>
-								<label for="usuario">Usiário</label>
+								<label id="labelusuario" for="usuario">Usiário</label>
 						</div>
 						<div class="label-float">
 								<input type="password" id="senha" placeholder=""required>
-								<label for="senha">Senha</label>
+								<label id="labelsenha" for="senha">Senha</label>
 								<i class="fa fa-eye" aria-hidden="true"></i>
 						</div>
 						<div class="label-float">
 								<input type="password" id="confirmasenha" placeholder="" required>
-								<label for="confirmasenha">Confirme senha</label>
+								<label id="labelconfirmasenha" for="confirmasenha">Confirme senha</label>
 								<i id="confirmsenha" class="fa fa-eye" aria-hidden="true"></i>
 						</div>
 						<div class="justify-center">
-								<button>Cadastrar</button>
+								<button onclick='cadastrar()'>Cadastrar</button>
 						</div>
 				</div>
 		</main>
 		<script src="linda.js"></script>
+		<script src="cadastrolinda.css"></script>
 </body>
 </html>

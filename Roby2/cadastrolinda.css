@@ -93,3 +93,22 @@ button:hover{
 		right: 10px;
 		cursor: pointer;
 }
+
+#sucesso{
+	background-color: #00ff0050;
+	color: #00ff00;
+	padding: 10px;
+	border-radius: 4px;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.100);
+	display: none;
+	text-align: center;
+}
+#erro{
+	background-color: #ff000050;
+	color: red;
+	text-align: center;
+	padding: 10px;
+	border-radius: 4px;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.100);
+	display: none;
+}

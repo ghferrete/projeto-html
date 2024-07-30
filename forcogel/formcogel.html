@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhando com formulário</title>
+		<style>
+@media screen and (min-width: 700px){
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  position: fixed;
+background-color: #000000;
+ 
+}
+header {
+  background-color: #90ee9080;
+  /*background-image: linear-gradient(to bottom, #90ee9080, transparent);*/
+  top: 0px;
+  height: 70px;
+  width: 99vw;
+  margin-left: 3px;
+}
+nav {
+  display: block;
+}
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+li {
+  display: flex;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 6px;
+  background-color: lightgreen;
+}
+li:hover {
+  background-image: linear-gradient(to left, lightgreen, transparent);
+  transition: 0.5s;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+form {
+  display: flex;
+  align-content: center;
+  margin: auto;
+  left: 10px;
+  margin-top: 5%;
+  max-width: 90vw;
+  min-width: 50vw;
+  padding: 10px;
+  height: 70%;
+  align-items: ;
+  column-gap: 10px;
+  background-image: linear-gradient(to bottom, #99ee9980, lightgreen);
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  font-weight: bolder;
+  max-width: 30%;
+  min-width: 5vw;
+  height: 5%;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  min-width: 8vw;
+}
+input {
+  padding: 15px;
+  border-radius: 15px;
+}
+label {
+  padding: 15px;
+}
+input:hover {
+  background-color: lightblue;
+  transition: 0.5s;
+}
+footer {
+  display: block;
+  
+  margin: auto;
+  text-align: center;
+  height: 20px;
+  background-color: #99ee9980;
+  /*background-image: linear-gradient(to top, green, transparent);*/
+  margin-top: 60px;
+  margin-left: 3px;
+  height: 50px;
+  align-items: center center;
+}
+p {
+  display: block;
+  position: relative;
+  top: 20px;
+  font-weight: bolder;
+}
+iframe {
+  display: block;
+  position: absolute;
+  top: 55%;
+  left:73%;
+  transform: translate(-50%, -50%);
+  height:49vh;
+  width: 40vw;
+  min-width: 20vw;
+  max-width: 90%;
+  border-radius: 20px;
+}
+
+				
+}
+		
+@media(max-width: 699px){
+*{
+				padding: 0px;
+				margin: 0px;
+				box-sizing: border-box;
+		}
+		body, html{
+				background-color: #000000;
+				height: 100vh;
+				width:100vw;
+				position: fixed;
+				
+		}
+		
+		header{
+				display:block;
+				background-color: #90ee9080;
+				background-color: #90ee9080;
+				margin-top: 2px;
+				border-radius: 20px 20px 0px 0px;
+				height: 50px;
+				
+		}
+		footer{
+				display:block;
+				background-color: #90ee9080;
+				height: 80px;
+				width: 99vw;
+				position: absolute;
+				top: 87%;
+				left: 3px;
+				border-radius: 0px 0px 20px 20px;
+				text-align: center;
+		}
+		footer>p{
+				margin-top: 27px;
+				font-weight: bolder;
+		}
+		nav{
+				display: block;
+		}
+		ul{
+				display: flex;
+		}
+		li{
+				text-decoration: none;
+				display: block;
+				padding: 5px;
+				border: 1px solid black;
+				border-radius: 15px;
+				margin: auto;
+				margin-top: 11px;
+				background-color: lightgreen;
+		}
+		a{
+				text-decoration: none;
+				padding: 5px;
+				margin-top: 10px;
+				color: black;
+				font-weight: bolder;
+		}
+		
+		
+		#form{
+				position:absolute;
+				background-color: #90ee9080;
+				width: 350px;
+				min-height: 70vh;
+				height: 77%;
+				top: 48%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 20px;
+				display: flex;
+				
+		}
+		div{
+				display: grid;
+				padding: 5px;
+				grid-gap: 5px;
+				
+		}
+		.input{
+				height: 250px;
+				padding: 10px;
+				grid-gap: 5px;
+				
+		}
+		.label{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 230px;
+				margin-top: 10px;
+				background-color: white;
+				align-items: left;
+				text-align: left;
+				margin-left: 10px;
+				border: 1px solid green;
+				border-radius: 10px;
+				width: 30%;
+		}
+		
+		input{
+				border: 1px solid green;
+				border-radius: 10px;
+				background-color: white;
+				text-align: center;
+				font-weght: bolder;
+				width: 99%;
+				margin-left: 15px;
+		}
+		
+		
+		div.enviar>input{
+				display: inline-block;
+				height: 30px;
+				position: absolute;
+				margin-top: 70%;
+				left: 18%;
+				width: 30%;
+				background-color: #90ee90;
+		}
+		div.enviar>input#apagar{
+				left: 50%;
+		}
+		input:hover{
+				background-color: lightgreen;
+		}
+		div.enviar>input:hover{
+				background-color: lightgreen;
+		}
+		
+		
+		
+		
+		iframe{
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, 30%);
+				border-radius: 5px;
+		}
+}
+		</style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">GERAL</a></li>
+        <li><a href="#">CADASTRO</a></li>
+        <li><a href="#">SEGURANÇA</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <form id="form" action="https://api.sheetmonkey.io/form/vSJkAsij91fqxkmBhhhm5U" method="post">
+      <div class="label">
+        <label for="NOME">NOME :</label>
+        <label for="CPF">CPF :</label>
+        <label for="FUNCAO">FUNÇÃO :</label>
+        <label for="ADMICAO">ADMIÇÃO :</label>
+        <label for="ASO">DATA ASO :</label>
+        <label for="OBRA">OBRA :</label>
+      </div>
+      <div class="input">
+        <input type="text" name="NOME" id="NOME" autocomplete="on">
+        <input type="text" name="CPF" id="CPF" autocomplete="on">
+        <input type="text" name="FUNCAO" id="FUNCAO" autocomplete="on">
+        <input type="date" name="ADMICAO" id="ADMICAO" autocomplete="on">
+        <input type="date" name="ASO" id="ASO" autocomplete="on">
+        <input type="text" name="OBRA" id="OBRA" autocomplete="on">
+      </div>
+      <div class="enviar">
+        <input type="submit" value="CADASTRAR">
+      		<input id="apagar"type="reset" value="APAGAR">
+      </div>
+    </form>
+
+  </section>
+  <section id="iframe">
+    <iframe src="https://app.powerbi.com/view?r=eyJrIjoiZDZmNWYzZWUtOGU3Yi00N2U4LWExNjEtMGMyNWVkZjNiZjljIiwidCI6ImQxNzUxNzYxLTE3NWQtNDY1YS04ODAyLTU3Y2Y1YTFlZTA0NCJ9&pageName=ReportSection7fc14fea0cb0ad12c600"></iframe>
+  </section>
+  <footer>
+    <p>COGEL CONSTRUTORA DE OBRAS GERAIS LTDA</p>
+  </footer>
+<script>
+	const enviar = (event) => {
+  event.preventDefault();
+ const NOME=document.querySelector('input[name=NOME]').value;
+  const CPF=document.querySelector('input[name=CPF]').value;
+  const FUNÇÃO=document.querySelector('input[name=FUNCAO]').value;
+  const ADMISSÃO=document.querySelector('input[name=ADMICAO]').value;
+  const ASO=document.querySelector('input[name=ASO]').value;
+  const OBRA=document.querySelector('input[name=OBRA]').value;
+  
+  
+  
+  
+  
+  fetch('https://api.sheetmonkey.io/form/vSJkAsij91fqxkmBhhhm5U',{
+    method: 'post',
+    headers: {
+      'Acept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({NOME,CPF,FUNÇÃO,ADMISSÃO,ASO,OBRA}),
+    
+    
+  }).then(()=> alert('Cadastrado com sucesso!'));
+  form.reset();
+};
+
+document.querySelector('form').addEventListener('submit', enviar);
+
+</script>
+</body>
