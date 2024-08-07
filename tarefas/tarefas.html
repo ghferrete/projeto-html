@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>LISTA DE TAREFAS</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<style>
+		*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				outline: none;
+		}
+		body{
+				
+		}
+		main{
+				
+				background: #f999ff50;
+				min-width: 50%;
+				max-width: 97%;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 10px;
+				margin-bottom: 1px;
+				border-radius: 5px;
+				padding: 20px;
+		}
+		main:hover{
+				box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.6);
+				transition: 0.8s ease-in-out;
+			}
+		input{
+				height: 30px;
+				border-radius: 5px;
+				padding-left: 10px;
+				border: none;
+				width: 75%;
+		}
+		button{
+				height: 30px;
+				background: #f999ff;
+				border: none;
+				color: #ffffff;
+				padding: 0 15px;
+				border-radius: 5px;
+				font-weight: bolder;
+				float: right;
+				cursor: pointer;
+		}
+		button:hover{
+				opacity: 0.9;
+				transition: 0.8s ease-in-out;
+				background-color: #e32636;
+				box-shadow: 1px 1px 20px rgba(255,0,0,0.8);
+				
+		}
+		ul{
+				
+				list-style: none;
+				margin-top: 10px;
+				
+				display: flex;
+				justify-contet: space-between;
+				
+				align-items: center;
+				flex-direction: column;
+				
+		}
+		.task{
+				display: flex;
+				box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+				background-color: #ffffff;
+				min-height: 40px;
+				padding: 0px 15px;
+				border-radius: 5px;
+				width: 100%;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 10px;
+				
+				
+		}
+		span{
+				
+				opacity: 0;
+				transition: opacity 0.8s ease-in-out;	
+		}
+		.task:hover span{
+				opacity: 1;
+				
+				
+		}
+		p{
+				max-width: 80%;
+				word-wrap: break-word;
+				text-align: center;
+				
+		}
+		#img1{
+				color: green;		
+				text-align: center;
+		}
+		#img1:hover{
+				cursor: pointer;
+				font-size: 27px;
+				transition: 0.8s;
+				text-shadow: 0.1em 0.1em 0.2em green;
+				
+				
+		}
+		.img2{
+				color: red;
+					
+		}
+		.img2:hover{
+				cursor: pointer;
+				font-size: 27px;
+				transition: 0.8s;
+				text-shadow: 0.1em 0.1em 0.2em red;
+		}
+		.done{
+				background-color: rgba(0,255,0,0.30);
+				text-decoration: line-through;
+				font-weight: bold;
+		}
+		</style>
+</head>
+<body>
+		<main>
+			<input type="text" class="input" name="tarefa"id="tarefa" placeholder="Insira aqui a tarefa" required="on">
+			<button class="button">Salvar</button>
+			<ul class="container">
+				
+			</ul>
+		</main>
+	<script>
+		const button = document.querySelector('.button')
+		const input = document.querySelector('.input')
+		const listacompleta = document.querySelector('.container')
+		let minhalistadeitens = []
+		function addnovatarefa(){
+				minhalistadeitens.push({
+				tarefa:input.value, 
+				concluida: false
+				
+		})
+				input.value = ''
+				mostrartarefas()
+		}
+		function mostrartarefas(){
+				let novali = ''
+				minhalistadeitens.forEach((item,posicao) =>{
+				novali = novali + `
+				<li class="task ${item.concluida && "done"}">
+					<div id="img1"><span class="material-symbols-outlined" onclick="concluirtarefa(${posicao})">
+					check_circle
+					</span></div>
+					<p>${item.tarefa}</p>
+					<div class="img2"><span class="material-symbols-outlined"onclick="deletaritem(${posicao})">
+					close</span></div>
+				</li>`
+				})
+		listacompleta.innerHTML = novali
+				localStorage.setItem('lista', JSON.stringify(minhalistadeitens))
+		}
+		function concluirtarefa(posicao){
+			minhalistadeitens[posicao].concluida = !minhalistadeitens[posicao].concluida
+			mostrartarefas()	
+		}
+		function deletaritem(posicao){
+			minhalistadeitens.splice(posicao,1)
+			mostrartarefas()
+		}
+		function recarregartarefa(){
+				
+					const tarefasdolocalstorage = localStorage.getItem('lista')
+				if (tarefasdolocalstorage){
+				minhalistadeitens =JSON.parse(tarefasdolocalstorage)
+				}
+				mostrartarefas()
+			}
+			
+		recarregartarefa()
+		button.addEventListener('click', addnovatarefa)
+	</script>
+</body>
+
+</html>
