@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+		<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Escreva o que falar</title>
+		<style>
+		*{
+				padding: 0;
+				font-family: helvetica;
+				margin: 0;
+		}
+		body{
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				width: 100vw;
+				height: 100vh;
+				background-color: #ff00ff;
+				position: fixed;
+		}
+		main{
+				padding: 10px;
+				width: 80%;
+				height: 80%;
+				background-color:#1f1f1f;
+				display: flex;
+				flex-direction: column;
+				border-radius: 20px;
+				box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.330);
+		}
+		h1{
+				padding: 20px;
+		}
+		#texto-transcrito{
+				height: 80%;
+				padding: 10px;
+				border-radius: 20px;
+				
+				text-align: center;
+				outline: none;
+		}
+		button{
+				border-radius: 20px;
+				height: 90%;
+				width: 90%;
+				mouse: pointer;
+				opacity: 1;
+				font-size: 1.5rem;
+				border:none;
+				padding-right: 5px;
+				
+		}
+		button:hover{
+				opacity: .5;
+		}
+		#zap{
+				width: 60px;
+				border-radius: 30px;
+				margin-bottom: 10px;
+				mouse: pointer;
+				
+				
+				
+		}
+		#zap:hover{
+				transform: scale(1.2);
+		}
+		#btz{
+				display: flex;
+				padding-top: 15px;
+				justify-content: space-around;
+				
+		}
+		</style>
+</head>
+<body>
+		<h1>
+				Clique e fale
+		</h1>
+		<main>
+				<textarea id="texto-transcrito" class="textoenvio" rows="6" cols="80" name="texto" placeholder="Aperte o botão e fale"readonly></textarea>
+				<section id="btz">
+				<button id="transcrever">Iniciar</button>
+				<img onclick="sendwhatsapp();" id="zap"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRzCzsZtsdyJGKS7Wf4iDngmwZSsO5MeWiP-8ElgVxLOEfY8Px5ZUMDco&s=10"/>
+				</section>
+		</main>
+		<script>
+const caixatexto = document.getElementById('texto-transcrito');
+const botaotranscricao = document.getElementById('transcrever');
+const reconhecimento = new webkitSpeechRecognition();
+
+		
+reconhecimento.onresult = (evento)=>{
+	const transcricao =	evento.results[0][0].transcript;
+		caixatexto.innerText = transcricao;
+};
+botaotranscricao.addEventListener('click', () => reconhecimento.start());
+
+		
+		function sendwhatsapp(){
+		var texto = document.querySelector('.textoenvio').value;
+		var url = "https://wa.me/" +"?text=" +"*texto :*"+texto+"%0a";
+				
+				window.open(url, '_blank').focus();
+		}
+</script>
+</body>
+
+</html>
