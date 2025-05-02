@@ -75,7 +75,7 @@
 				display: flex;
 				box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
 				background-color: #ffffff;
-				min-height: 30px;
+				min-height: 20px;
 				padding: 0px 15px;
 				border-radius: 5px;
 				width: 100%;
@@ -203,7 +203,8 @@
 				
 		})
 				input.value = ''
-				mostrartarefas()
+				mostrartarefas();
+			input.focus()
 		}
 		function mostrartarefas(){
 				let novali = ''
@@ -240,6 +241,7 @@
 			
 		recarregartarefa()
 		button.addEventListener('click', addnovatarefa)
+		input.focus()
 	</script>
 </body>
 
