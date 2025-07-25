@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Menu ferramentas</title>
+
+<style>
+*{
+	color: #f0f0f0;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background-color: #d0d0d0;
+	color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+}	
+.background{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("imgfundo.jpg") no-repeat center center/cover;
+	z-index: -2;
+}
+.background-overlay{
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+
+}
+.conteudo{
+	text-align: center;	
+	z-index: 1;
+	
+}
+.conteudo h1{
+	font-size: 4rem;
+	color: #ff6347;
+	text-shadow: 2px 2px #000;
+}
+.conteudo p {
+	font-size: 1.6rem;
+	margin: 10px 0;
+	text-shadow: 2px 2px #000;
+}
+.leia-mais{
+	padding: 10px 20px;
+	border: none;
+	background-color: #ff6347;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	transion: .3s;
+	border-radius: 3px;
+	font-size: 1.3rem;
+	margin-top: 25px;
+}
+.leia-mais:hover{
+	background-color: #e5533c;
+
+}
+
+.menu-hamburguer{
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	z-index: 4;
+}
+#menu-toggle{
+	display: none;
+}
+.linha{
+	height: 4px;
+	background-color: #ff6347;
+	border-radius: 2px;
+	transition: 0.3s;
+
+}
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.95);
+	z-index: 2;
+	transform: scale(0);
+	transition: .5s;
+}
+.menu-icon{
+	width: 35px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 5;
+	position: relative;
+	cursor: pointer;
+
+}
+.menu{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	text-align: center;
+}
+.menu ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.menu ul li{
+	margin: 20px 0;
+	
+}
+.menu a{
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+}
+.menu a:hover{
+	color: #fff;
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+	transform: rotate(45deg) translate(13px, 13px);
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+	opacity: 0;
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+	transform: rotate(-45deg) translate(5px, -5px);
+	
+}
+#menu-toggle:checked ~ .overlay{
+	transform: scale(1);
+	
+}
+</style>
+		
+</head>
+<body>
+	<div class="background">
+		<div class="background-overlay"></div>
+	</div>
+	<div class="menu-hamburguer">
+		<input type="checkbox" id="menu-toggle" />	
+		<label for="menu-toggle" class="menu-icon">
+			<div class="linha"></div>
+			<div class="linha"></div>
+			<div class="linha"></div>
+		</label>
+	<div class="overlay">
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="menu.html">Inicio</>
+				</li>
+				<li>
+					<a href="finanças.html">Finanças</>
+				</li>
+				<li>
+					<a href="remedios.html">Remédios</>
+				</li>
+				<li>
+					<a href="despesas.html">Despesas</>
+				</li>
+				<li>
+					<a href="#">Contatos</>
+				</li>
+			</ul>
+	</div>
+
+	</div>
+
+	
+
+	<div class="conteudo">
+		<h1> Aproveite nossa ferramenta amor</h1>
+		<p> Cada dia que passa você está mais linda aos meus olhos, e hoje eu te amo muito mais que ontem e bem menos que amanhã. Te Amo Jessy</p>
+		<button class="leia-mais">Saiba mais</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		
+<style>
+/**{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'poppins', sans-serif;
+	outline: none;
+	background-color: white;
+	font-size: calc(1vw + 1vh);
+}*/
+*{
+	color: #f0f0f0;
+	outline: none;
+	text-decoration: none;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background-color: #d0d0d0;
+	color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+}	
+.background{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("imgfundo.jpg") no-repeat center center/cover;
+	z-index: -2;
+}
+.background-overlay{
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+
+}
+/*body{
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	padding-bottom: 5px;
+	font-size: 1em;
+}
+*/
+
+.menu-hamburguer{
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	z-index: 4;
+}
+#menu-toggle{
+	display: none;
+}
+.linha{
+	height: 4px;
+	background-color: #ff6347;
+	border-radius: 2px;
+	transition: 0.3s;
+
+}
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.95);
+	z-index: 2;
+	transform: scale(0);
+	transition: .5s;
+}
+.menu-icon{
+	width: 35px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 5;
+	position: relative;
+	cursor: pointer;
+
+}
+.menu{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%%);
+	text-align: center;
+}
+.menu ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.menu ul li{
+	margin: 20px 0;
+	
+}
+.menu a{
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+}
+.menu a:hover{
+	color: #fff;
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+	transform: rotate(45deg) translate(13px, 13px);
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+	opacity: 0;
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+	transform: rotate(-45deg) translate(5px, -5px);
+	
+}
+#menu-toggle:checked ~ .overlay{
+	transform: scale(1);
+	
+}
+main{
+	max-width: 99%;
+	min-height: 5%;
+	margin-bottom: auto;
+	min-width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	border: 1px solid #fff;
+	border-radius: 20px;
+	margin-top: 5px;
+	padding: 3px;
+	word-wrap: break-word;
+}
+.resume{
+	display: flex;
+	padding: 10px 0;
+	gap: 20px;
+	width: 100%;
+	justify-content: space-around;
+	flex-wrap:wrap;
+	background-color: black;
+	border-radius: 20px 20px 0 0;
+	min-height: 10%;
+}
+.resume>div{
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 0px 5px #ccc;
+	border-radius:10px;
+	width: 25%;
+	padding: 10px;
+}
+.newItem{
+	
+	display:flex;
+	max-width: 100%;
+	padding: 8px;
+	justify-content: left;
+	flex-wrap: wrap;
+	background-color: black;
+	flex-direction: row;
+	
+}
+.divDesc, .divType, .divAmount, .divData{
+	display: flex;
+	justify-content: sapace-between;
+	flex-direction: row;
+	padding: 5px;
+	background-color: black;
+}
+.divDesc{
+	
+	
+}
+.divDesc>input{
+	
+	height: 25px;
+	border-radius: 5px;
+}
+.divAmount{
+	
+	
+}
+.divAmount>input{
+	height: 25px;
+	
+}
+.divType>select{
+	height: 25px;
+}
+.newItem{
+	justify-content: space-between;
+}
+.menu-hamburguer{
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	z-index: 4;
+}
+#menu-toggle{
+	display: none;
+}
+.linha{
+	height: 4px;
+	background-color: #ff6347;
+	border-radius: 2px;
+	transition: 0.3s;
+
+}
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.95);
+	z-index: 2;
+	transform: scale(0);
+	transition: .5s;
+}
+.menu-icon{
+	width: 35px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 5;
+	position: relative;
+	cursor: pointer;
+
+}
+.menu{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	text-align: center;
+}
+.menu ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.menu ul li{
+	margin: 20px 0;
+	
+}
+.menu a{
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+}
+.menu a:hover{
+	color: #fff;
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+	transform: rotate(45deg) translate(13px, 13px);
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+	opacity: 0;
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+	transform: rotate(-45deg) translate(5px, -5px);
+	
+}
+#menu-toggle:checked ~ .overlay{
+	transform: scale(1);
+	
+}
+
+.newItem>button{
+	
+	background-color: red;
+	color: white;
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	height: 30px;
+	transition: 0.1s ease;
+	width: 50px;
+
+	
+	
+	
+}		
+
+.newItem>button:hover{
+	background-color: greenyellow;
+	box-shaddow: 2px 2px 2px blue;
+}	
+input{
+	padding: 5px;
+	max-width: 100%;
+	border-radius: 5px;
+	background-color: white;
+	justify-content: left;
+	height: 35px;
+	color: black;
+}
+label{
+	padding-right: 5px;
+	padding-top: 5px;
+	background-color: black;
+	color: white;
+}
+select{
+	padding: 5px;
+	
+	color: black;
+	background-color: #f0f0f0;
+	margin-left: 0%;
+}
+#desc{
+	max-width: 100%;
+	min-width: 30%;
+	word-wrap: break-word;
+	
+
+}
+.divTable{
+	min-width: 100%;
+	display: flex;
+	justify-content: center;
+	color: white;
+	background-color: black;
+	margin-top: 0px;
+	border-radius: 20px;
+	padding: 0;
+	word-break: break-all;
+	font-size: calc(1vw + 1vh);
+}
+.divData{
+	
+}
+thead{
+	color: white;
+	background-color: black;
+	border-radius: 20px 0;
+}
+
+th{
+	text-align: center;
+	border-bottom: inset;
+	padding-bottom: 5px;
+	color: white;
+	background-color: black;
+	padding-top: 3px;
+	margin: 0;
+	
+}
+
+
+tr{
+	color: black;
+	background-color: black;
+	min-width: 97%;
+	word-wrap: break-word;
+}
+td{
+	background-color: black;
+	font-wight: bolder;
+	color: white;
+	padding: 2px;
+	min-width: 97%;
+	word-wrap: break-word;
+	
+	
+}
+i{
+	font-size: 25px;
+	cursor: pointer;
+	background-color: black;
+	color: white;
+}
+.bx-trash:hover{
+	color: red;
+}
+.bxs-chevron-up-circle{
+	color: #00c9a7;
+	padding: 0;
+	background-color: black;
+}
+.bxs-chevron-down-circle{
+	color: red;
+	padding: 0;
+	background-color: black;
+}
+.columnAction{
+	width: 40px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+.columnAction>button{
+	cursor: pointer;
+	border: none;
+	background-color: black;
+	padding: 0;
+}
+.columnAction>button:hover{
+	color: red;
+
+}
+.columnAmount{
+	width: 20%;
+	background-color: black;
+	color: white;
+}
+.columnType{
+	text-align: center;
+        background-color: black;
+	color: white;
+	
+}
+.columnData{
+	
+}
+table{
+	background-color: #fff;
+	border-radius: 10px 10px 16px 16px;
+	width: 99%;
+	padding: 3px 4px;
+	word-wrap: break-word;
+}
+tbody{
+	color: white;
+	background-color: black;
+	word-wrap: break-word;
+}
+</style>
+
+		<title>Remedios</title>
+</head>
+<body>
+
+	<div class="background">
+		<div class="background-overlay"></div>
+	</div>
+	<div class="menu-hamburguer">
+		<input type="checkbox" id="menu-toggle" />	
+		<label for="menu-toggle" class="menu-icon">
+			<div class="linha"></div>
+			<div class="linha"></div>
+			<div class="linha"></div>
+		</label>
+	<div class="overlay">
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="menu.html">Inicio</>
+				</li>
+				<li>
+					<a href="finanças.html">Finanças</>
+				</li>
+				<li>
+					<a href="remedios.html">Remédios</>
+				</li>
+				<li>
+					<a href="despesas.html">Despesas</>
+				</li>
+				<li>
+					<a href="#">Contatos</>
+				</li>
+			</ul>
+	</div>
+
+	</div>
+		
+
+
+				<main>
+				<div class="resume">
+						<div>
+								Entradas: R$
+								<span class="incomes">0.00</span>
+						</div>
+						<div>
+								Saidas: R$
+								<span class="expenses">0.00</span>
+				</div>
+						<div>
+								Total: R$
+								<span class="total">0.00</span>
+						</div>
+				</div>
+				
+				<div class="newItem">
+						<div class="divDesc">
+								<label for="desc">Descrição</label>
+								<input type="text" name="desc" id="desc"></input>
+						</div>
+
+						<div class="divData">
+								<label for="data">Data</label>
+								<input type="date" name="data" id="data"></input>
+							</div>
+							<div class="divAmount">
+								<label for="amount" class="val">Quantidade</label>
+								<input type="number" name="amount" id="amount"></input>
+							</div>
+
+							<div class="divType">
+								<label for="type">Tipo</label>
+								<select name="type" id="type">
+										<option>Entrada</option>
+										<option>Saida</option>
+								</select>
+							</div>
+						<button type="submit" id="btnNew">Incluir</button>
+				</div>
+		
+				<div class="divTable">
+					<table><thead>
+						<tr class="cor">
+							<th> Descrição</th>
+							<th class="columnAmount">Quantidade</th>
+							<th class="columnData">Data Fim</th>
+							<th class="columnType">Tipo</th>
+							
+							<th class="columnAction"></th>
+						</tr>	
+						</thead> 
+						<tbody>
+							
+						</tbody>
+					</table>
+
+
+				</div>
+		</main>
+	
+<script>
+
+	const tbody = document.querySelector("tbody");
+const descItem = document.querySelector("#desc");
+const amount = document.querySelector("#amount");
+const type = document.querySelector("#type");
+const btnNew = document.querySelector("#btnNew");
+const data = document.querySelector("#data")
+
+const incomes = document.querySelector(".incomes");
+const expenses = document.querySelector(".expenses");
+const total = document.querySelector(".total");
+
+let items;
+
+btnNew.onclick = () => {
+	
+  if (descItem.value === "" || amount.value === "" || type.value === "") {
+    return alert("Preencha todos os campos!");
+  }
+
+  items.push({
+    desc: descItem.value,
+    amount: Math.abs(amount.value).toFixed(2),
+    type: type.value,
+    data: data.value,
+  });
+
+  setItensBD();
+	
+  loadItens();
+  
+  descItem.value = "";
+  amount.value = "";
+};
+
+function deleteItem(index) {
+  items.splice(index, 1);
+  setItensBD();
+  loadItens();
+}
+
+function insertItem(item, index) {
+  let tr = document.createElement("tr");
+
+  tr.innerHTML = `
+    <td>${item.desc}</td>
+    <td> ${item.amount}</td>
+    <td>${item.data}</td>
+    <td class="columnType">${
+      item.type === "Entrada"
+        ? '<i class="bx bxs-chevron-up-circle"></i>'
+        : '<i class="bx bxs-chevron-down-circle"></i>'
+    }</td>
+    <td class="columnAction">
+      <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
+    </td>
+  `;
+
+  tbody.appendChild(tr);
+}
+
+function loadItens() {
+  items = getItensBD();
+  tbody.innerHTML = "";
+  items.forEach((item, index) => {
+    insertItem(item, index);
+  });
+
+  getTotals();
+}
+
+function getTotals() {
+  const amountIncomes = items
+    .filter((item) => item.type === "Entrada")
+    .map((transaction) => Number(transaction.amount));
+
+  const amountExpenses = items
+    .filter((item) => item.type === "Saida")
+    .map((transaction) => Number(transaction.amount));
+
+  const totalIncomes = amountIncomes
+    .reduce((acc, cur) => acc + cur, 0)
+    .toFixed(2);
+
+  const totalExpenses = Math.abs(
+    amountExpenses.reduce((acc, cur) => acc + cur, 0)
+  ).toFixed(2);
+
+  const totalItems = (totalIncomes - totalExpenses).toFixed(2);
+
+  incomes.innerHTML = totalIncomes;
+  expenses.innerHTML = totalExpenses;
+  total.innerHTML = totalItems;
+}
+
+const getItensBD = () => JSON.parse(localStorage.getItem("db_items")) ?? [];
+const setItensBD = () =>
+  localStorage.setItem("db_items", JSON.stringify(items));
+
+loadItens();
+ 
+</script>
+</body>
+</html>
