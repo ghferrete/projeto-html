@@ -152,18 +152,43 @@ body{
 	list-style: none;
 }
 .menu ul li{
+
 	margin: 20px 0;
+
+	width: 100%;
+	border: 2px solid #ff6347;
+	
+	height: 35px;
+}
+
+	li:hover{
+		cursor: pointer;
+		background: #ff6347;
+		transition: 0.3s;
+		box-shadow: -5px 5px 5px orange;
+	}
+.menu a{
+
+	text-decoration: none;
+
+	font-size: 2rem;
+
+	color: #ff6347;
+
+	transition: 0.3s;
+
+	padding: 5px 3px;
+	
 	
 }
-.menu a{
-	text-decoration: none;
-	font-size: 2rem;
-	color: #ff6347;
-	transition: 0.3s;
-}
+
 .menu a:hover{
+
 	color: #fff;
+
+	
 }
+
 #menu-toggle:checked + .menu-icon .linha:nth-child(1){
 	transform: rotate(45deg) translate(13px, 13px);
 	
