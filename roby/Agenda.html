@@ -162,7 +162,7 @@
 				width: 75%;
 				color: black;
 		}
-		button{
+		.button{
 				height: 30px;
 				background: #f999ff;
 				border: none;
@@ -173,7 +173,7 @@
 				float: right;
 				cursor: pointer;
 		}
-		button:hover{
+		.button:hover{
 				opacity: 0.9;
 				transition: 0.2s ease-in-out;
 				background-color: #e32636;
@@ -270,9 +270,7 @@
 				justify-content: space-around;
 				
 		}
-		#btg{
-				background-color: #f999ff90;
-		}
+		
 		</style>
 </head>
 <body>
@@ -312,11 +310,11 @@
 
 	</div>
 	<div id="agenda">
-	<iframe src="https://calendar.google.com/calendar/embed?height=60%&wkst=2&ctz=America%2FSao_Paulo&showPrint=0&hl=pt_BR&src=Z3VzdGF2b2hlbnJpcXVlZmVycmV0ZTEzNzlAZ21haWwuY29t&src=MWY2Y2U2MWEyYTRkYjQzYzQ1MjVlYjNmMDc0ODA3YjY1MjI1MmExNmRlN2IxOTM5ODBmMzlhNDYxYmU0MTUwZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YjEzYTE5ZTJkYTczNDA0NmFkMGVjMmRmYmFiNmI5NmMxNmYxMWQ4NDM5YzIzYTc3NjY1YjA1NDdmNmZiZTExNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtYnIuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23ad1457&color=%23b39ddb&color=%230b8043" style="border:solid 1px #777" width="80%" height="50%" frameborder="0" scrolling="no"></iframe>
+	<iframe src="https://calendar.google.com/calendar/embed?height=50%&wkst=2&ctz=America%2FSao_Paulo&showPrint=0&hl=pt_BR&src=Z3VzdGF2b2hlbnJpcXVlZmVycmV0ZTEzNzlAZ21haWwuY29t&src=MWY2Y2U2MWEyYTRkYjQzYzQ1MjVlYjNmMDc0ODA3YjY1MjI1MmExNmRlN2IxOTM5ODBmMzlhNDYxYmU0MTUwZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YjEzYTE5ZTJkYTczNDA0NmFkMGVjMmRmYmFiNmI5NmMxNmYxMWQ4NDM5YzIzYTc3NjY1YjA1NDdmNmZiZTExNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtYnIuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23ad1457&color=%23b39ddb&color=%230b8043" style="border:solid 1px #777" width="80%" height="100%" frameborder="0" scrolling="no"></iframe>
 
-	<div id="btg">
+	<div class="button">
 <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<!--<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">-->
 <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 <script>
 (function() {
@@ -325,7 +323,7 @@
     calendar.schedulingButton.load({
       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HzUXXkF9j2vvWDxTkBAp-S5X2L5G5xl0dTGYkwLN7Db_T7n5kT1cXv1rXhbvjqFIqkXgNjsLL?gv=true',
       color: '#039BE5',
-      label: 'Agendar',
+      label: 'Agenda',
       target,
     });
   });
