@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+</head>
+<style>
+*{
+	color: #f0f0f0;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background-color: #d0d0d0;
+	color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+}	
+.background{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("imgfundo.jpg") no-repeat center center/cover;
+	z-index: -2;
+}
+.background-overlay{
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+
+}
+
+
+.voltar{
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 100%;
+	align-itens: center;
+}
+
+
+.iframe{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	margin: auto;	
+	align-itens: center;
+}
+iframe{
+	height: 90%;
+	width: 90%;
+	justify-content: center;
+	align-itens: center;
+	text-align: center;
+	margin: auto;
+}
+a{
+
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+	text-align: center;
+	border: 2px solid #ff3647;
+	width: 20%;
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	margin-top: 10px;
+	background-color: black;
+	border-radius: 10px;
+	
+}
+a:hover{
+	cursor: pointer;
+	color: #fff;
+	background-color: #ff634780;	
+	
+}
+</style>
+
+<body>
+<div class="background">
+		<div class="background-overlay"></div>
+	</div>
+	<div class="voltar">
+		<a href="finanças.html">Voltar</a>
+	
+	<section class="iframe">
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTf3KcvUmx9V0-K0xNhp_s1qEfeZgq7F0lPGlrTSkpuTa1iHyO91Z2ffEHRkKuH07MwSBu1H0d2sgHS/pubhtml?gid=900060276&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+	</section>
+	</div>
+</body>
+
+</html>
