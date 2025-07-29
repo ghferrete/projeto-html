@@ -597,7 +597,7 @@ tbody{
 										<option>Saida</option>
 								</select>
 							</div>
-						<button type="submit" id="btnNew">Incluir</button>
+						<button onclick="enviarDados()" id="btnNew">Incluir</button>
 				</div>
 		
 				<div class="divTable">
@@ -721,7 +721,37 @@ const setItensBD = () =>
   localStorage.setItem("db_items", JSON.stringify(items));
 
 loadItens();
- 
+ async function enviarDados(){
+	 const Descricao = document.getElementById('desc').value;
+	 const Data = document.getElementById('data').value;
+	 const Quantidade = document.getElementById('amount').value;
+	 const Tipo = document.getElementById('type').value;
+
+	 const dados = {
+		 
+		 Quantidade: Quantidade,
+		 Descrição: Descricao,
+		 Data: Data,
+		 Tipo: Tipo
+	 };
+	 try{
+		 const response = await fetch('https://sheetdb.io/api/v1/edh8uc6awapfc',{
+			 method: 'POST',
+			 headers: {
+				 'Accept': 'application/json',
+				 'Content-Type': 'application/json'
+			 },
+			 body: JSON.stringify({dados: [dados]})
+		 });
+		 const result = await response.json();
+		 console.log('Sucesso:', result);
+		 alert('Dados enviados com sussesso para finanças da familia');
+	 } catch (error){
+		 console.error('Erro:', error);
+		 alert('Erro ao enviar dados para planilha.')
+	 }
+		 
+	 }
 </script>
 </body>
 </html>
