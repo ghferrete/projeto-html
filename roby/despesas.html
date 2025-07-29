@@ -741,7 +741,7 @@ loadItens();
 				 'Accept': 'application/json',
 				 'Content-Type': 'application/json'
 			 },
-			 body: JSON.stringify({dados: [dados]})
+			 body: JSON.stringify(dados)
 		 });
 		 const result = await response.json();
 		 console.log('Sucesso:', result);
