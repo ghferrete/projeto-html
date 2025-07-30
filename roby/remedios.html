@@ -613,7 +613,7 @@ btnNew.onclick = () => {
     type: type.value,
     data: data.value,
   });
-
+  enviardadosremedios();
   setItensBD();
 	
   loadItens();
@@ -687,7 +687,36 @@ const setItensBD = () =>
   localStorage.setItem("db_items", JSON.stringify(items));
 
 loadItens();
- 
+	async function enviardadosremedios(){
+const Descricao = document.getElement.ById('desc').value
+const Data = document.getElement.ById('data').value
+const Quantidade = document.getElement.ById('amount').value
+const Tipo = document.getElement.ById('type').value
+
+const dadosremedios{
+	Descrição: Descricao,
+	Data: Data,
+	Quantidade: Quantidade,
+	Tipo: Tipo
+};
+	try{
+		const response = await fetch('https://sheetdb.io/api/v1/pl08vcak61ymf',{
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(dadosremedios)
+			});
+			const result = await respoinse.json();
+			console.log('Relatório enviado com sucesso', result);
+			alert('Dados enviados para relatorio');
+		catch (error){
+		console.error('Erro:', error);
+		alert('Erro ao enviar dados para a planilha.')
+		}
+}
+	
 </script>
 </body>
 </html>
