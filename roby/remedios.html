@@ -737,7 +737,7 @@ const dadosremedios = {
 			const result = await respoinse.json();
 			console.log('Relatório enviado com sucesso', result);
 			alert('Dados enviados para relatorio');
-		catch (error){
+	}catch (error){
 		console.error('Erro:', error);
 		alert('Erro ao enviar dados para a planilha.')
 		}
