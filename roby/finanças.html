@@ -15,17 +15,8 @@
 	font-family: 'poppins', sans-serif;
 	outline: none;
 	background-color: white;
-}
-body{
-	min-height: 100vh;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	background-color: black;
-	padding-bottom: 5px;
-	font-size: 1em;
-}
-*/
+	font-size: calc(1vw + 1vh);
+}*/
 *{
 	color: #f0f0f0;
 	outline: none;
@@ -43,7 +34,6 @@ body{
 	overflow: hidden;
 	position: relative;
 	height: 100vh;
-	width: 100vw;
 }	
 .background{
 	position: fixed;
@@ -64,6 +54,52 @@ body{
 	background: rgba(0, 0, 0, 0.85);
 
 }
+/*body{
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	padding-bottom: 5px;
+	font-size: 1em;
+}
+*/
+*{
+	color: #f0f0f0;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background-color: #d0d0d0;
+	color: #f0f0f0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+}	
+.background{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("imgfundo.jpg") no-repeat center center/cover;
+	z-index: -2;
+}
+.background-overlay{
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.85);
+
+}
+
 
 .menu-hamburguer{
 	position: absolute;
@@ -119,36 +155,33 @@ body{
 .menu ul li{
 
 	margin: 20px 0;
-
 	width: 100%;
 	border: 2px solid #ff6347;
 	margin-bottom: 10px;
 	height: 40px;
 }
 
-	li:hover{
-		cursor: pointer;
-		background: #ff6347;
-		transition: 0.3s;
-		box-shadow: -5px 5px 5px orange;
+li:hover{
+	cursor: pointer;	
+	background: #ff6347;
+	transition: 0.3s;
+	box-shadow: -5px 5px 5px orange;
 	}
 .menu a{
 
 	text-decoration: none;
-
 	font-size: 2rem;
-
 	color: #ff6347;
-
 	transition: 0.3s;
-
 	text-align: center;
-	
 	
 }
 
 .menu a:hover{
-	color: #fff;	
+
+	color: #fff;
+
+	
 }
 
 #menu-toggle:checked + .menu-icon .linha:nth-child(1){
@@ -168,7 +201,7 @@ body{
 	
 }
 main{
-	width: 100%;
+	max-width: 99%;
 	min-height: 5%;
 	margin-bottom: auto;
 	min-width: 40%;
@@ -179,15 +212,16 @@ main{
 	opacity: 0.5;
 	border: 1px solid #fff;
 	border-radius: 20px;
-	margin-top: auto;
+	margin-top: 5px;
 	padding: 3px;
+	word-wrap: break-word;
 }
 .resume{
 	display: flex;
 	padding: 10px 0;
 	gap: 20px;
 	width: 100%;
-	justify-content: center;
+	justify-content: space-around;
 	flex-wrap:wrap;
 	background-color: black;
 	border-radius: 20px 20px 0 0;
@@ -199,47 +233,131 @@ main{
 	box-shadow: 0px 0px 5px #ccc;
 	border-radius:10px;
 	width: 25%;
-	padding: 5px;
+	padding: 10px;
 }
 .newItem{
+	
 	display:flex;
 	max-width: 100%;
 	padding: 8px;
 	justify-content: left;
 	flex-wrap: wrap;
 	background-color: black;
+	flex-direction: row;
 	
 }
-.divDesc, .divType, .divAmount{
+.divDesc, .divType, .divAmount, .divData{
 	display: flex;
-	
+	justify-content: sapace-between;
 	flex-direction: row;
 	padding: 5px;
 	background-color: black;
 }
 .divDesc{
-	width: 70%;
+	
 	
 }
 .divDesc>input{
-	width: 100%;
+	
 	height: 25px;
 	border-radius: 5px;
 }
 .divAmount{
-	width: 50%;
+	
 	
 }
 .divAmount>input{
 	height: 25px;
-	width: 100%;
+	
 }
 .divType>select{
 	height: 25px;
 }
+.newItem{
+	justify-content: space-between;
+}
+.menu-hamburguer{
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	z-index: 4;
+}
+#menu-toggle{
+	display: none;
+}
+.linha{
+	height: 4px;
+	background-color: #ff6347;
+	border-radius: 2px;
+	transition: 0.3s;
 
+}
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.95);
+	z-index: 2;
+	transform: scale(0);
+	transition: .5s;
+}
+.menu-icon{
+	width: 35px;
+	height: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 5;
+	position: relative;
+	cursor: pointer;
+
+}
+.menu{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%%);
+	text-align: center;
+}
+.menu ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.menu ul li{
+	margin: 20px 0;
+	
+}
+.menu a{
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+}
+.menu a:hover{
+	color: #fff;
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(1){
+	transform: rotate(45deg) translate(13px, 13px);
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(2){
+	opacity: 0;
+	
+}
+#menu-toggle:checked + .menu-icon .linha:nth-child(3){
+	transform: rotate(-45deg) translate(5px, -5px);
+	
+}
+#menu-toggle:checked ~ .overlay{
+	transform: scale(1);
+	
+}
 
 .newItem>button{
+	
 	background-color: red;
 	color: white;
 	border: none;
@@ -248,6 +366,10 @@ main{
 	cursor: pointer;
 	height: 30px;
 	transition: 0.1s ease;
+	width: 50px;
+
+	
+	
 	
 }		
 
@@ -260,9 +382,9 @@ input{
 	max-width: 100%;
 	border-radius: 5px;
 	background-color: #f0f0f0;
+	justify-content: left;
+	height: 35px;
 	color: black;
-
-	
 }
 label{
 	padding-right: 5px;
@@ -273,7 +395,6 @@ label{
 select{
 	padding: 5px;
 	color: black;
-	font-weight: bold;
 	
 	background-color: white;
 	margin-left: 0%;
@@ -281,11 +402,12 @@ select{
 #desc{
 	max-width: 100%;
 	min-width: 30%;
+	word-wrap: break-word;
 	
 
 }
 .divTable{
-	width: 100%;
+	min-width: 100%;
 	display: flex;
 	justify-content: center;
 	color: white;
@@ -293,6 +415,11 @@ select{
 	margin-top: 0px;
 	border-radius: 20px;
 	padding: 0;
+	word-break: break-all;
+	font-size: calc(1vw + 1vh);
+}
+.divData{
+	
 }
 thead{
 	color: white;
@@ -316,13 +443,16 @@ tr{
 	color: black;
 	background-color: black;
 	min-width: 97%;
+	word-wrap: break-word;
 }
 td{
 	background-color: black;
 	font-wight: bolder;
 	color: white;
-	padding-left: 3px;
+	padding: 2px;
 	min-width: 97%;
+	word-wrap: break-word;
+	
 	
 }
 i{
@@ -361,14 +491,17 @@ i{
 
 }
 .columnAmount{
-	width: 30%;
+	width: 20%;
 	background-color: black;
 	color: white;
 }
 .columnType{
 	text-align: center;
         background-color: black;
-	color: white;
+	color: black;
+	
+}
+.columnData{
 	
 }
 table{
@@ -376,21 +509,37 @@ table{
 	border-radius: 10px 10px 16px 16px;
 	width: 99%;
 	padding: 3px 4px;
-	
+	word-wrap: break-word;
 }
 tbody{
 	color: white;
 	background-color: black;
+	word-wrap: break-word;
+}
+	a{
+
+	text-decoration: none;
+	font-size: 2rem;
+	color: #ff6347;
+	transition: 0.3s;
+	text-align: center;
+	
+}
+
+a:hover{
+
+	color: #fff;
+
+	
 }
 </style>
 
-		<title>Finanças</title>
+		<title>Despesas</title>
 </head>
 <body>
 
-<div class="background">
+	<div class="background">
 		<div class="background-overlay"></div>
-	<h1>Finanças</h1>
 	</div>
 	<div class="menu-hamburguer">
 		<input type="checkbox" id="menu-toggle" />	
@@ -424,10 +573,14 @@ tbody{
 	</div>
 
 	</div>
+		
 
 
-
-		<main>
+				<main>
+					<div>
+					<h1>Finanças</h1>
+					<a href="finanças.html">Relatório de despesas</a>
+				</div>
 				<div class="resume">
 						<div>
 								Entradas: R$
@@ -448,10 +601,16 @@ tbody{
 								<label for="desc">Descrição</label>
 								<input type="text" name="desc" id="desc"></input>
 						</div>
+
+						<div class="divData">
+								<label for="data">Data</label>
+								<input type="date" name="data" id="data"></input>
+							</div>
 							<div class="divAmount">
 								<label for="amount" class="val">Valor</label>
 								<input type="number" name="amount" id="amount"></input>
 							</div>
+
 							<div class="divType">
 								<label for="type">Tipo</label>
 								<select name="type" id="type">
@@ -459,15 +618,17 @@ tbody{
 										<option>Saida</option>
 								</select>
 							</div>
-						<button type="submit" id="btnNew">Incluir</button>
+						<button onclick="enviarDados()" id="btnNew">Incluir</button>
 				</div>
 		
 				<div class="divTable">
 					<table><thead>
 						<tr class="cor">
 							<th> Descrição</th>
-							<th class="columnAmount">valor</th>
+							<th class="columnAmount">Quantidade</th>
+							<th class="columnData">Data Fim</th>
 							<th class="columnType">Tipo</th>
+							
 							<th class="columnAction"></th>
 						</tr>	
 						</thead> 
@@ -487,6 +648,7 @@ const descItem = document.querySelector("#desc");
 const amount = document.querySelector("#amount");
 const type = document.querySelector("#type");
 const btnNew = document.querySelector("#btnNew");
+const data = document.querySelector("#data")
 
 const incomes = document.querySelector(".incomes");
 const expenses = document.querySelector(".expenses");
@@ -504,8 +666,9 @@ btnNew.onclick = () => {
     desc: descItem.value,
     amount: Math.abs(amount.value).toFixed(2),
     type: type.value,
+    data: data.value,
   });
-
+enviarDados();
   setItensBD();
 	
   loadItens();
@@ -525,7 +688,8 @@ function insertItem(item, index) {
 
   tr.innerHTML = `
     <td>${item.desc}</td>
-    <td>R$ ${item.amount}</td>
+    <td> ${item.amount}</td>
+    <td>${item.data}</td>
     <td class="columnType">${
       item.type === "Entrada"
         ? '<i class="bx bxs-chevron-up-circle"></i>'
@@ -578,7 +742,37 @@ const setItensBD = () =>
   localStorage.setItem("db_items", JSON.stringify(items));
 
 loadItens();
- 
+ async function enviarDados(){
+	 const Descricao = document.getElementById('desc').value;
+	 const Data = document.getElementById('data').value;
+	 const Quantidade = document.getElementById('amount').value;
+	 const Tipo = document.getElementById('type').value;
+
+	 const pagamentos = {
+		 
+		 VALOR: Quantidade,
+		 DESCRIÇÃO: Descricao,
+		 DATA: Data,
+		 TIPO: Tipo
+	 };
+	 try{
+		 const response = await fetch('https://api.apispreadsheets.com/data/E8jQrlWlYwLVpJYy/',{
+			 method: 'POST',
+			 headers: {
+				 'Accept': 'application/json',
+				 'Content-Type': 'application/json'
+			 },
+			 body: JSON.stringify(pagamentos)
+		 });
+		 const result = await response.json();
+		 console.log('Sucesso:', result);
+		 alert('Erro ao enviar dados para planilha');
+	 } catch (error){
+		 console.error('Erro:', error);
+		 alert('Dados enviados com sussesso para finanças da familia.')
+	 }
+		 
+	 }
 </script>
 </body>
 </html>
