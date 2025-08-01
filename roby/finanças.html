@@ -33,7 +33,7 @@ body{
 	align-items: center;
 	overflow: hidden;
 	position: relative;
-	height: 100vh;
+	height: 100%;
 }	
 .background{
 	position: fixed;
@@ -417,6 +417,7 @@ select{
 	padding: 0;
 	word-break: break-all;
 	font-size: calc(1vw + 1vh);
+	overflow-y: auto;
 }
 .divData{
 	
@@ -510,11 +511,13 @@ table{
 	width: 99%;
 	padding: 3px 4px;
 	word-wrap: break-word;
+	
 }
 tbody{
 	color: white;
 	background-color: black;
 	word-wrap: break-word;
+	overflow-y: auto;
 }
 	a{
 
