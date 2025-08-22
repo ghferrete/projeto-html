@@ -718,11 +718,11 @@ function loadItens() {
 
 function getTotals() {
   const amountIncomes = items
-    .filter((item) => item.type === "Entrada")
+    .filter((item) => item.type === "ENTRADA")
     .map((transaction) => Number(transaction.amount));
 
   const amountExpenses = items
-    .filter((item) => item.type === "Saida")
+    .filter((item) => item.type === "SAIDA")
     .map((transaction) => Number(transaction.amount));
 
   const totalIncomes = amountIncomes
