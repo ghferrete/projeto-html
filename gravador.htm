@@ -21,8 +21,7 @@
         <button>Baixar Gravação</button>
     </a>
 
-    <script src="gravador.js">
-
+    <script>
 /*Neste código, temos:
 
 Um elemento <video> com o id="preview" que exibirá a captura da tela em tempo real. Os atributos autoplay e muted garantem que o vídeo comece a ser exibido assim que a captura for iniciada e sem áudio, para evitar microfonia.
@@ -47,7 +46,8 @@ let gravacao = [];
 iniciarBtn.addEventListener('click', async () => {
     try {
         const stream = await navigator.mediaDevices.getDisplayMedia({
-            video: { mediaSource: "screen" }
+            video: true,
+            audio: true
         });
 
         preview.srcObject = stream;
@@ -144,4 +144,5 @@ pararBtn.addEventListener('click', () => {
 });
 </script>
 </body>
+
 </html>
