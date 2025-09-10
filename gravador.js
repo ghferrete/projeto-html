@@ -8,8 +8,10 @@ let gravacao = [];
 
 iniciarBtn.addEventListener('click', async () => {
     try {
+        // Remova o 'mediaSource', pois não é padrão e causa problemas em navegadores móveis.
         const stream = await navigator.mediaDevices.getDisplayMedia({
-            video: { mediaSource: "screen" }
+            video: true,
+            audio: false // Para gravar apenas a tela, sem áudio do microfone.
         });
 
         preview.srcObject = stream;
