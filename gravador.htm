@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravador de Tela Web</title>
+    <style>
+        /* Estilos básicos para a interface */
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        video { border: 1px solid #ccc; margin-bottom: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Gravador de Tela Web</h1>
+    <video id="preview" width="640" height="480" autoplay muted></video><br>
+    <button id="iniciar">Iniciar Gravação</button>
+    <button id="parar" disabled>Parar Gravação</button>
+    <a id="download" style="display: none;">
+        <button>Baixar Gravação</button>
+    </a>
+
+    <script src="gravador.js">
+
+/*Neste código, temos:
+
+Um elemento <video> com o id="preview" que exibirá a captura da tela em tempo real. Os atributos autoplay e muted garantem que o vídeo comece a ser exibido assim que a captura for iniciada e sem áudio, para evitar microfonia.
+
+Três botões: "Iniciar Gravação" (id="iniciar"), "Parar Gravação" (id="parar") e um link de download que contém um botão (id="download"). O botão de parar e o link de download estão inicialmente desabilitados ou ocultos.
+
+A inclusão de um arquivo JavaScript externo, gravador.js, onde toda a lógica da nossa aplicação será implementada.
+
+A Lógica da Gravação: JavaScript
+O arquivo gravador.js será o cérebro da nossa ferramenta. Utilizaremos a API navigator.mediaDevices.getDisplayMedia() para solicitar ao usuário a permissão para capturar a tela e a API MediaRecorder para efetivamente gravar o stream de vídeo.
+
+JavaScript
+*/
+const preview = document.getElementById('preview');
+const iniciarBtn = document.getElementById('iniciar');
+const pararBtn = document.getElementById('parar');
+const downloadLink = document.getElementById('download');
+
+let mediaRecorder;
+let gravacao = [];
+
+iniciarBtn.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getDisplayMedia({
+            video: { mediaSource: "screen" }
+        });
+
+        preview.srcObject = stream;
+        iniciarBtn.disabled = true;
+        pararBtn.disabled = false;
+        downloadLink.style.display = 'none';
+        gravacao = [];
+
+        mediaRecorder = new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                gravacao.push(event.data);
+            }
+        };
+
+        mediaRecorder.onstop = () => {
+            const blob = new Blob(gravacao, {
+                type: 'video/webm'
+            });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+            downloadLink.download = 'gravacao.webm';
+            downloadLink.style.display = 'block';
+            iniciarBtn.disabled = false;
+            pararBtn.disabled = true;
+        };
+
+        mediaRecorder.start();
+    } catch (error) {
+        console.error("Erro ao iniciar a gravação: ", error);
+        alert("Não foi possível iniciar a gravação da tela.");
+    }
+});
+
+pararBtn.addEventListener('click', () => {
+    mediaRecorder.stop();
+    const tracks = preview.srcObject.getTracks();
+    tracks.forEach(track => track.stop());
+    preview.srcObject = null;
+});
+const preview = document.getElementById('preview');
+const iniciarBtn = document.getElementById('iniciar');
+const pararBtn = document.getElementById('parar');
+const downloadLink = document.getElementById('download');
+
+let mediaRecorder;
+let gravacao = [];
+
+iniciarBtn.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getDisplayMedia({
+            video: { mediaSource: "screen" }
+        });
+
+        preview.srcObject = stream;
+        iniciarBtn.disabled = true;
+        pararBtn.disabled = false;
+        downloadLink.style.display = 'none';
+        gravacao = [];
+
+        mediaRecorder = new MediaRecorder(stream);
+
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                gravacao.push(event.data);
+            }
+        };
+
+        mediaRecorder.onstop = () => {
+            const blob = new Blob(gravacao, {
+                type: 'video/webm'
+            });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+            downloadLink.download = 'gravacao.webm';
+            downloadLink.style.display = 'block';
+            iniciarBtn.disabled = false;
+            pararBtn.disabled = true;
+        };
+
+        mediaRecorder.start();
+    } catch (error) {
+        console.error("Erro ao iniciar a gravação: ", error);
+        alert("Não foi possível iniciar a gravação da tela.");
+    }
+});
+
+pararBtn.addEventListener('click', () => {
+    mediaRecorder.stop();
+    const tracks = preview.srcObject.getTracks();
+    tracks.forEach(track => track.stop());
+    preview.srcObject = null;
+});
+</script>
+</body>
+</html>

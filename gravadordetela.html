@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravador de Tela Web</title>
+    <style>
+        /* Estilos básicos para a interface */
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        video { border: 1px solid #ccc; margin-bottom: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Gravador de Tela Web</h1>
+    <video id="preview" width="640" height="480" autoplay muted></video><br>
+    <button id="iniciar">Iniciar Gravação</button>
+    <button id="parar" disabled>Parar Gravação</button>
+    <a id="download" style="display: none;">
+        <button>Baixar Gravação</button>
+    </a>
+
+    <script src="gravador.js"></script>
+</body>
+</html>
