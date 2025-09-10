@@ -11,7 +11,7 @@ iniciarBtn.addEventListener('click', async () => {
         // Remova o 'mediaSource', pois não é padrão e causa problemas em navegadores móveis.
         const stream = await navigator.mediaDevices.getDisplayMedia({
             video: true,
-            audio: false // Para gravar apenas a tela, sem áudio do microfone.
+            audio: true // Para gravar apenas a tela, sem áudio do microfone.
         });
 
         preview.srcObject = stream;
@@ -53,3 +53,4 @@ pararBtn.addEventListener('click', () => {
     tracks.forEach(track => track.stop());
     preview.srcObject = null;
 });
+
