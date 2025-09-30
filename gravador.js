@@ -20,8 +20,14 @@ iniciarBtn.addEventListener('click', async () => {
         downloadLink.style.display = 'none';
         gravacao = [];
 
-        mediaRecorder = new MediaRecorder(stream);
+       // mediaRecorder = new MediaRecorder(stream);
+        // Código ORIGINAL:
+// mediaRecorder = new MediaRecorder(stream); 
 
+// Código MODIFICADO (Tenta usar MP4 com H.264):
+mediaRecorder = new MediaRecorder(stream, {
+    mimeType: 'video/mp4; codecs=avc1' // Tenta forçar o MP4 com H.264
+});
         mediaRecorder.ondataavailable = (event) => {
             if (event.data.size > 0) {
                 gravacao.push(event.data);
@@ -30,11 +36,11 @@ iniciarBtn.addEventListener('click', async () => {
 
         mediaRecorder.onstop = () => {
             const blob = new Blob(gravacao, {
-                type: 'video/webm'
+                type: 'video/mp4'
             });
             const url = URL.createObjectURL(blob);
             downloadLink.href = url;
-            downloadLink.download = 'gravacao.webm';
+            downloadLink.download = 'gravacao.mp4';
             downloadLink.style.display = 'block';
             iniciarBtn.disabled = false;
             pararBtn.disabled = true;
@@ -53,4 +59,5 @@ pararBtn.addEventListener('click', () => {
     tracks.forEach(track => track.stop());
     preview.srcObject = null;
 });
+
 
